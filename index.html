@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VintageMobileCollection</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+            <h1>Show your phones!</h1>
+            <div class="phone-form">
+              <div class="form-group">
+                <label for="phoneName">Phone Name:</label>
+                <input type="text" id="phoneName" placeholder="Enter phone name">
+              </div>
+              
+              <div class="form-group">
+                <label for="phoneYear">Year:</label>
+                <input type="number" id="phoneYear" placeholder="Enter year">
+              </div>
+              
+              <div class="form-group">
+                <label for="OS">Operating System:</label>
+                <select id="OS">
+                  <option value="">Select OS</option>
+                  <option value="Android">Android</option>
+                  <option value="iOS">iOS</option>
+                  <option value="SymbianOS">SymbianOS</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              
+              <button id="btnAdd" type="button">Add Phone</button>
+            </div>
+            
+            <ul id="listContainer" class="phone-list"></ul>
+    </div>
+    <script src="jscript.js"></script>
+  </body>
+</html>
