@@ -5,36 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VintageMobileCollection</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <div id="app">
-            <h1>Show your phones!</h1>
-            <div class="phone-form">
-              <div class="form-group">
-                <label for="phoneName">Phone Name:</label>
-                <input type="text" id="phoneName" placeholder="Enter phone name">
-              </div>
-              
-              <div class="form-group">
-                <label for="phoneYear">Year:</label>
-                <input type="number" id="phoneYear" placeholder="Enter year">
-              </div>
-              
-              <div class="form-group">
-                <label for="OS">Operating System:</label>
-                <select id="OS">
-                  <option value="">Select OS</option>
-                  <option value="Android">Android</option>
-                  <option value="iOS">iOS</option>
-                  <option value="SymbianOS">SymbianOS</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-              
-              <button id="btnAdd" type="button">Add Phone</button>
-            </div>
-            
-            <ul id="listContainer" class="phone-list"></ul>
+      <div class="header">
+        <i class="fas fa-mobile-alt"></i>
+        <h1>Vintage Mobile Collection</h1>
+        <p>Display your retro phone collection</p>
+      </div>
+      
+      <div class="phone-form">
+        <h2>Add New Phone</h2>
+        <div class="form-group">
+          <label for="phoneName">Phone Name:</label>
+          <input type="text" id="phoneName" placeholder="e.g., Nokia 3310">
+        </div>
+        
+        <div class="form-group">
+          <label for="phoneYear">Year:</label>
+          <input type="number" id="phoneYear" placeholder="e.g., 2000" min="1980" max="2023">
+        </div>
+        
+        <div class="form-group">
+          <label for="OS">Operating System:</label>
+          <select id="OS">
+            <option value="">Select OS</option>
+            <option value="Android">Android</option>
+            <option value="iOS">iOS</option>
+            <option value="SymbianOS">SymbianOS</option>
+            <option value="Windows Mobile">Windows Mobile</option>
+            <option value="BlackBerryOS">BlackBerryOS</option>
+            <option value="PalmOS">PalmOS</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="phoneImage">Phone Image:</label>
+          <div class="image-upload-container">
+            <input type="file" id="phoneImage" accept="image/*" class="image-input">
+            <label for="phoneImage" class="image-upload-label">
+              <i class="fas fa-camera"></i>
+              <span>Choose Image</span>
+            </label>
+            <div id="imagePreview" class="image-preview"></div>
+          </div>
+        </div>
+        
+        <button id="btnAdd" type="button">
+          <i class="fas fa-plus"></i>
+          Add Phone
+        </button>
+      </div>
+      
+      <div class="collection-section">
+        <h2>Your Collection <span id="collectionCount">(0)</span></h2>
+        <ul id="listContainer" class="phone-list"></ul>
+        <div id="emptyState" class="empty-state">
+          <i class="fas fa-mobile"></i>
+          <p>Your collection is empty</p>
+          <p>It's perfect time to obtain your first retro phone!</p>
+        </div>
+      </div>
     </div>
     <script src="jscript.js"></script>
   </body>
